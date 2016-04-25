@@ -26,6 +26,7 @@ class Jury
   end
 
   def announce_winner(votes)
-    votes.max_by{|c, v| v}[0]
+    puts votes.max_by{|c, v| v}[0]
+    return votes.max_by{|c, v| v}[0]
   end
 end

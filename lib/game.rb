@@ -23,7 +23,7 @@ class Game
   end
 
   def individual_immunity_challenge
-    merge("combined_tribe").members.sample
+    return @tribes[0].members.sample
   end
 
 end
