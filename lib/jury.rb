@@ -9,24 +9,24 @@ class Jury
     @members << member
   end
 
-  def cast_votes(contestants)
-    votes = Hash[contestants.map {|c| [c, 0]}]
+  def cast_votes(finalists)
+    votes_per_finalist = Hash[finalists.map {|finalist| [finalist, 0]}]
     @members.each do |member|
-      votes[c = votes.keys.sample] += 1
-      puts "#{member} voted for #{c}."
+      votes_per_finalist[finalist = votes_per_finalist.keys.sample] += 1
+      puts "#{member} voted for #{finalist}."
     end
-    return votes
+    return votes_per_finalist
   end
 
-  def report_votes(votes)
-    votes.each do |c, v|
-      puts "#{c} has #{v} votes.".blue
+  def report_votes(votes_per_finalist)
+    votes_per_finalist.each do |finalist, votes|
+      puts "#{finalist} has #{votes} votes.".blue
     end
     return
   end
 
-  def announce_winner(votes)
-    puts "\n#{votes.max_by{|c, v| v}[0]} has won!".red
-    return votes.max_by{|c, v| v}[0]
+  def announce_winner(votes_per_finalist)
+    puts "\n#{votes_per_finalist.max_by{|finalist, votes| votes}.first} has won!".red
+    return votes_per_finalist.max_by{|finalist, votes| votes}.first
   end
 end

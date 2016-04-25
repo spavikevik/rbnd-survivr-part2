@@ -37,7 +37,7 @@ end
 
 def phase_three
   7.times do
-    puts member = @borneo.immunity_challenge.tribal_council
+    puts member = @borneo.immunity_challenge.tribal_council(immune: @borneo.individual_immunity_challenge)
     @jury.members << member
   end
 end
