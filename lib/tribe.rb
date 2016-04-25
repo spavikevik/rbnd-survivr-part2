@@ -2,7 +2,8 @@ class Tribe
   attr_reader :name, :members
 
   def initialize(options = {})
-    @name = options[:name]
+    @color = options[:color] || :yellow
+    @name = options[:name].send(@color)
     @members = options[:members]
     puts "Created tribe #{@name} with members #{@members}."
   end

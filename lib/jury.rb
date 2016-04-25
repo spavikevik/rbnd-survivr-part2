@@ -20,13 +20,13 @@ class Jury
 
   def report_votes(votes)
     votes.each do |c, v|
-      puts "#{c} has #{v} votes."
+      puts "#{c} has #{v} votes.".blue
     end
     return
   end
 
   def announce_winner(votes)
-    puts votes.max_by{|c, v| v}[0]
+    puts "\n#{votes.max_by{|c, v| v}[0]} has won!".red
     return votes.max_by{|c, v| v}[0]
   end
 end
