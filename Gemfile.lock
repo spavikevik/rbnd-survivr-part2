@@ -1,0 +1,22 @@
+GIT
+  remote: https://github.com/spavikevik/colorizr.git
+  revision: 01ca2dcdb550c5c5709b2ce76d09e1616a2a1709
+  specs:
+    colorizr (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.0.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorizr!
+  nokogiri
+
+BUNDLED WITH
+   1.11.2
