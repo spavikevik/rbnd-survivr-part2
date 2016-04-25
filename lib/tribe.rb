@@ -8,7 +8,7 @@ class Tribe
   end
 
   def tribal_council(options = {})
-    @members.select {|member| member != options[:immune]}.sample
+    @members.delete(@members.select {|member| member != options[:immune]}.sample)
   end
 
   def to_s
